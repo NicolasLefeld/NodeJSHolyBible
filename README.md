@@ -6,24 +6,47 @@ The Domain Name System (DNS) is the phonebook of the Internet. Humans access inf
 
 - How does DNS work?
     - The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
-
-
 ## HTTP
-- What is it?
+### - What is it?
 
-- HTTP Methods
+> The Hypertext Transfer Protocol (HTTP) is the foundation of the World Wide Web
 
-- When should you use GET, POST, DELETE, PUT, etc… methods?
+- Is used to load web pages using hypertext links. HTTP is an application layer protocol designed to transfer information between networked devices and runs on top of other layers of the network protocol stack.
+- A typical flow over HTTP involves a client machine making a request to a server, which then sends a response message.
 
+### - HTTP Methods
+> Also refered as HTPP Verbs, wich are: GET, POST, DELETE, PUT, HEAD, OPTIONS and PATCH. These methods are basically a category of operation on resources, so Not all resource have to support all methods. Based on our case and the characteristics of the resource, we can choose wich one do we use.
+
+> The common features or group we can say, based on how these methods behaves while communicating are:
+
+- SAFE: we can say a method is safe if the request doesn't alter the state of the server, so Read only operation are consider to be safe. So this type of method request shouldn't introduce any side effect or load on the server, also it shouldn't trigger ant external code.
+
+- IDEMPOTENT: are the methods that no matter how many times you call the same request, you will get the same result.
+
+- CACHEABLE: Response of the request that can be stored and used later. Not all the mothod responses can be cacheable. Ideally, a request that has both cacheable request and response code is elegible for caching.
+
+- ### When should you use GET, POST, DELETE, PUT, etc… methods?
+    - GET: When the client needs som kind of data or resource, he can request it with a GET method. This method is considered safe, idempotent and cacheable.
+    - POST: To subbmit a resource we use the POST method, often causing a change in state or side effects on the server. So this method creates a new resource.
+    - DELETE:This request deletes the specified resource. Its considered  an idempotent method becouse if you call a delete method a lot of times, the only resource that gets deleted is the first one, te subsequent ones are just a failed request.
+    - PUT: Used to update or replace a resource with the requested payload. Its a idempotent method becouse calling it once or several times has no side effects.
+    - HEAD: Similar to the GET method but this one only returns the header and not the body. Why you need this method at all then? Glad you ask, the reason its in the preformance. Ex: If we want to decide before downloading a large file, if the file its too large we dont want it. Here is when the HEAD method is nessesary, becouse the head can bring the size of the file. Like the GET method this one is safe, idempotent and cacheable method
+    - OPTIONS:
+    - PATCH: 
 - When should you return an HTTP code 200, 201, 300, etc..?
         
 ## CORS
-- What is it?
+### - What is it?
+>CORS (cross-origin resource sharing)
 
+ - A request for a resource (like an image or a font) outside of the origin is known as a cross-origin request.
+    - Unlike same-origin, navigating to "https://www.ejemplo.com/hola.html" from URL1 could be allowed with CORS. Allowing cross-origin requests is helpful, as many websites today load resources from different places on the Internet (stylesheets, scripts, images, and more).
+    - Cross-origin requests, however, mean that servers must implement ways to handle requests from origins outside of their own. CORS allows servers to specify who (i.e., which origins) can access the assets on the server, among many other things.
 ## RESTful
-- What is it?
-
-- Example
+### - What is it?
+>RESTful web services
+ - RESTful are built to work best on the Web. Representational State Transfer (REST) is an architectural style that specifies constraints, such as the uniform interface, that if applied to a web service induce desirable properties, such as performance, scalability, and modifiability, that enable services to work best on the Web. In the REST architectural style, data and functionality are considered resources and are accessed using Uniform Resource Identifiers (URIs), typically links on the Web. The resources are acted upon by using a set of simple, well-defined operations
+### - Example
     
 ## Middlewares (On NodeJS)
 - What is it?
