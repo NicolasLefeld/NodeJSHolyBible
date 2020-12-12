@@ -1,47 +1,77 @@
 # Basic knowledge
 
 ## DNS
-- What is it?
-The Domain Name System (DNS) is the phonebook of the Internet. Humans access information online through domain names, like nytimes.com or espn.com. Web browsers interact through Internet Protocol (IP) addresses. DNS translates domain names to IP addresses so browsers can load Internet resources.
 
-- How does DNS work?
-    - The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
+Domain name system, is like the phonebook of the internet, they are responsible of finding the IP’s of every web site.
+
+In a typical DNS query without any caching, there are four servers that work together to deliver an IP address to the client: recursive resolvers, root nameservers, TLD nameservers, and authoritative nameservers.
+
+First the resolver queries the root nameserver. The root server is the first step in translating (resolving) human-readable domain names into IP addresses. The root server then responds to the resolver with the address of a Top Level Domain (TLD) DNS server (such as .com or .net) that  stores the information for its domains.
+
+Next the resolver queries the TLD server. The TLD server responds with the IP address of the domain’s authoritative nameserver. The recursor then queries the authoritative nameserver, which will respond with the IP address of the origin server.
+
+The resolver will finally pass the origin server IP address back to the client. Using this IP address, the client can then initiate a query directly to the origin server, and the origin server will respond by sending website data that can be interpreted and displayed by the web browser.
+
 
 
 ## HTTP
-- What is it?
 
-- HTTP Methods
+Hyper text transfer protocol, basically it’s a protocol to connect between clients and servers, where the client sends a request, and the server returns a response to that request.
 
-- When should you use GET, POST, DELETE, PUT, etc… methods?
+Methods for HTTP are: POST – GET – PUT – PATCH – DELETE
+POST → Is a rquest to the web server to accept the data enclosed in the body of the request. Used more likely to store some new data.
 
-- When should you return an HTTP code 200, 201, 300, etc..?
+GET → Is used to read data from the URL.
+
+PUT → used to update or create new data, where the resource ID is chosen by the client and not the server.
+
+DELETE → Used to delete a resource.
         
 ## CORS
-- What is it?
+
+A request for a resource (like an image or a font) outside of the origin is known as a cross-origin request. CORS (cross-origin resource sharing) manages cross-origin requests.
+
+Allowing cross-origin requests is helpful, as many websites today load resources from different places on the Internet (stylesheets, scripts, images, and more).
 
 ## RESTful
-- What is it?
 
-- Example
+A RESTful API is an architectural style for an application program interface (API) that uses HTTP requests to access and use data. That data can be used to GET, PUT, POST and DELETE data types, which refers to the reading, updating, creating and deleting of operations concerning resources.
+
+REST technology is generally preferred over other similar technologies. This tends to be the case because REST uses less bandwidth, making it more suitable for efficient internet usage. RESTful APIs can also be built with programming languages such as JavaScript or Python.
+
+Example → https://official-joke-api.appspot.com/jokes/programming/random
+
+This API REST will return you in JSON format, a random joke.
     
 ## Middlewares (On NodeJS)
-- What is it?
 
-- Example
+It’s the code that runs between the request from the client, until it reaches the server.
+
+A perfect example is when you need to allow a user to have access to a determinate URL, and if he’s not logged in, it will return you to a different URL than the requested one.
 
 ## NPM, NVM and YARN
-- What are those?
+
+NPM → is the package manager for the node JavaScript platform. It puts modules in place so node can find them.
+
+NVM → Is a tool that allows you to install nodejs and have different version of it.
+
+YARN → is a package manager for your code. It allows you to share your code to another developers around the world.
 
 ## JSON
-- What is it?
 
-- Example
+JavaScript Object Notation → When exchanging data with the server, the data can only be text, and JSON is text, and we can convert every JavaScript object into JSON and send it to the server.
 
-- JSON Web Token
-    - What is it?
+Sending Data →
 
-    - Example
+
+
+Recieving data → 
+
+
+
+JSON is a lightweight data-interchange format
+JSON is "self-describing" and easy to understand
+JSON is language independent *
 
 ## Deploy a project
 - How to?
