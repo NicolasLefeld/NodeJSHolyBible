@@ -12,9 +12,7 @@ Next the resolver queries the TLD server. The TLD server responds with the IP ad
 
 The resolver will finally pass the origin server IP address back to the client. Using this IP address, the client can then initiate a query directly to the origin server, and the origin server will respond by sending website data that can be interpreted and displayed by the web browser.
 
-![image]()
-
-
+![image](images/imagen1.png)
 
 ## HTTP
 
@@ -28,6 +26,8 @@ GET → Is used to read data from the URL.
 PUT → used to update or create new data, where the resource ID is chosen by the client and not the server.
 
 DELETE → Used to delete a resource.
+
+![image](images/imagen2.png)
         
 ## CORS
 
@@ -51,6 +51,8 @@ It’s the code that runs between the request from the client, until it reaches 
 
 A perfect example is when you need to allow a user to have access to a determinate URL, and if he’s not logged in, it will return you to a different URL than the requested one.
 
+![image](images/imagen3.png)
+
 ## NPM, NVM and YARN
 
 NPM → is the package manager for the node JavaScript platform. It puts modules in place so node can find them.
@@ -65,15 +67,50 @@ JavaScript Object Notation → When exchanging data with the server, the data ca
 
 Sending Data →
 
-
+![image](images/imagen4.png)
 
 Recieving data → 
 
-
+![image](images/imagen5.png)
 
 JSON is a lightweight data-interchange format
 JSON is "self-describing" and easy to understand
 JSON is language independent *
+
+## JWT
+
+defines a compact and self-contained way for securely transmitting information between parties as a JSON object. 
+
+When should we use them?
+
+    • Authorization: This is the most common scenario for using JWT. Once the user is logged in, each subsequent request will include the JWT, allowing the user to access routes, services, and resources that are permitted with that token. Single Sign On is a feature that widely uses JWT nowadays, because of its small overhead and its ability to be easily used across different domains.
+      
+    • Information Exchange: JSON Web Tokens are a good way of securely transmitting information between parties. Because JWTs can be signed for example, using public/private key pairs you can be sure the senders are who they say they are. Additionally, as the signature is calculated using the header and the payload, you can also verify that the content hasn't been tampered with.
+
+
+JWT Structure
+
+    • Header
+
+    • Payload
+
+    • Signature
+
+Header:
+
+![image](images/imagen6.png)
+
+Payload:
+
+![image](images/imagen7.png)
+
+Signature:
+
+![image](images/imagen8.png)
+
+The full JWT should look like:
+
+![image](images/imagen9.png)
 
 ## Deploy a project
 - How to?
