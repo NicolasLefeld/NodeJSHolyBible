@@ -12,6 +12,8 @@ Next the resolver queries the TLD server. The TLD server responds with the IP ad
 
 The resolver will finally pass the origin server IP address back to the client. Using this IP address, the client can then initiate a query directly to the origin server, and the origin server will respond by sending website data that can be interpreted and displayed by the web browser.
 
+![image]()
+
 
 
 ## HTTP
