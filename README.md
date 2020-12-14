@@ -118,42 +118,90 @@ The full JWT should look like:
 - Examples of hosting
 
 ## Microservices
-- What is it?
 
-- Examples 
+Instead of containing everything in a single unit, the microservices-based application is broken down into smaller, lightweight pieces based on a logical construct. The application consists of independent small (micro-) services, and when we deploy or scale the app, individual services get distributed within a set of machines which we call “a cluster” in the service fabric world.
+
+![image](images/imagen10.png)
+
+**ADVANTAGES**
+
+* Allows us to build, operate and manage services independently, and we can easily scale them out based on the resources they need.
+
+* Microservices take a lot of infrastructure risk out of the project straight away. With the infrastructure made almost invisible, microservice teams can iterate quickly.
+
+**DRAWBACKS**
+
+* Microservices are not automatically the right solution for every project. When you are running multiple instances of the same service or worker, you don’t necessarily need microservices. A well-built monolithic system can scale just as well for some classes of problems.
+
+* One of the big problems with microservices is “orchestration”, which means how to integrate the services with a guide to drive the process, much like a conductor in an orchestra. Integrating microservices can be quite complex.
 
 ## Regular expressions
-- What is it?
 
-- Examples
+A regular expression is a sequence of characters that forms a search pattern.
+
+When you search for data in a text, you can use this search pattern to describe what you are searching for.
+
+A regular expression can be a single character, or a more complicated pattern.
+
+Regular expressions can be used to perform all types of text search and text replace operations.
+
+![image](images/imagen11.png)
 
 ## Minification
-- What is it?
 
-- Examples
+Minification is the process of removing unnecessary elements and rewriting code to reduce file size. It is commonly done to web page resources, such as HTML, CSS, and JavaScript files. Reducing the size of web resources allows the files to be transferred more quickly, making web pages load faster.
+
+<ins>Ways to minifiy code:</ins>
+
+https://javascript-minifier.com/
 
 ## Ternary operator
-- What is it? 
->
+
+The condition is what you’re actually testing. The result of your condition should be true or false or at least coerce to either boolean value.
+
+* A ? separates our conditional from our true value.
+
+* Anything between the ? and the : is what is executed if the condition evaluates to true.
+
+* Finally a : colon. If your condition evaluates to false, any code after the colon is executed.
+
+variablename = (condition) ? value1:value2
+
+<ins>**EXAMPLE**</ins>
+
+![image](images/imagen12.png)
 
 ## Recursion
-- What is it?
->
-- Example
->
+
+It’s the process in which a function repeatedly calls itself until a condition is met that makes it stop. It is similar to iteration with the main difference being that in recursion the function calls itself to execute instructions, but in iteration there is a loop that repeatedly executes a set of instructions.
+
+<ins>**EXAMPLE**</ins>
+
+![image](images/imagen13.png)
 
 ## Logical operators
-- What is it?
 
-- Examples
+![image](images/imagen14.png)
 
 ## Spread operator (...)
-- What is it?
->
-- Implementation
-> 
-- Examples
-> 
+
+Basically, there are three places you can use spread: 
+
+1. In function calls
+2. In array literals
+3. In object literals
+
+<ins>In functions:</ins>
+
+![image](images/imagen15.png)
+
+<ins>In arrays:</ins>
+
+![image](images/imagen16.png)
+
+<ins>In objects:</ins>
+
+![image](images/imagen17.png)
 
 # Version control system
 - What is it?
