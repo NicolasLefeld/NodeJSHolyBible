@@ -15,44 +15,49 @@ The Domain Name System (DNS) is the phonebook of the Internet. Humans access inf
 - A typical flow over HTTP involves a client machine making a request to a server, which then sends a response message.
 
 ### - HTTP Methods
-> Also refered as HTPP Verbs, wich are: GET, POST, DELETE, PUT, HEAD, OPTIONS and PATCH. These methods are basically a category of operation on resources, so Not all resource have to support all methods. Based on our case and the characteristics of the resource, we can choose wich one do we use.
+> Also refered as HTPP Verbs, wich are: GET, POST, DELETE, PUT, HEAD, OPTIONS and PATCH. These methods are basically a category of operation on resources.
 
 > The common features or group we can say, based on how these methods behaves while communicating are:
 
-- SAFE: we can say a method is safe if the request doesn't alter the state of the server, so Read only operation are consider to be safe. So this type of method request shouldn't introduce any side effect or load on the server, also it shouldn't trigger ant external code.
+- SAFE: we can say a method is safe if the request doesn't alter the state of the server.This type of method request shouldn't introduce any side effect or load on the server, also it shouldn't trigger ant external code.
 
 - IDEMPOTENT: are the methods that no matter how many times you call the same request, you will get the same result.
 
-- CACHEABLE: Response of the request that can be stored and used later. Not all the mothod responses can be cacheable. Ideally, a request that has both cacheable request and response code is elegible for caching.
+- CACHEABLE: Response of the request that can be stored and used later.
 
 - ### When should you use GET, POST, DELETE, PUT, etc… methods?
     - GET: When the client needs som kind of data or resource, he can request it with a GET method. This method is considered safe, idempotent and cacheable.
-    - POST: To subbmit a resource we use the POST method, often causing a change in state or side effects on the server. So this method creates a new resource.
-    - DELETE:This request deletes the specified resource. Its considered  an idempotent method becouse if you call a delete method a lot of times, the only resource that gets deleted is the first one, te subsequent ones are just a failed request.
+    - POST: This method creates a new resource.
+    - DELETE: This request deletes the specified resource. 
     - PUT: Used to update or replace a resource with the requested payload. Its a idempotent method becouse calling it once or several times has no side effects.
-    - HEAD: Similar to the GET method but this one only returns the header and not the body. Why you need this method at all then? Glad you ask, the reason its in the preformance. Ex: If we want to decide before downloading a large file, if the file its too large we dont want it. Here is when the HEAD method is nessesary, becouse the head can bring the size of the file. Like the GET method this one is safe, idempotent and cacheable method
+    - HEAD: Similar to the GET method but this one only returns the header and not the body. Like the GET method this one is safe, idempotent and cacheable method
     - OPTIONS:
     - PATCH: 
 - When should you return an HTTP code 200, 201, 300, etc..?
-        
+
 ## CORS
-### - What is it?
+- ### What is it?
 >CORS (cross-origin resource sharing)
 
  - A request for a resource (like an image or a font) outside of the origin is known as a cross-origin request.
     - Unlike same-origin, navigating to "https://www.ejemplo.com/hola.html" from URL1 could be allowed with CORS. Allowing cross-origin requests is helpful, as many websites today load resources from different places on the Internet (stylesheets, scripts, images, and more).
-    - Cross-origin requests, however, mean that servers must implement ways to handle requests from origins outside of their own. CORS allows servers to specify who (i.e., which origins) can access the assets on the server, among many other things.
 ## RESTful
-### - What is it?
->RESTful web services
- - RESTful are built to work best on the Web. Representational State Transfer (REST) is an architectural style that specifies constraints, such as the uniform interface, that if applied to a web service induce desirable properties, such as performance, scalability, and modifiability, that enable services to work best on the Web. In the REST architectural style, data and functionality are considered resources and are accessed using Uniform Resource Identifiers (URIs), typically links on the Web. The resources are acted upon by using a set of simple, well-defined operations
-### - Example
-    
+- ### What is it?
+>Restful is a software architectural style for applications based on networks (like Internet).
+- ### Example
+    https://official-joke-api.appspot.com/jokes/programming/random
+    This is a public API implemented as RESTful web service. Your browser will show an awful JSON-formatted programming joke.
 ## Middlewares (On NodeJS)
 - What is it?
-
+A Middleware is a program, function or script that is going to run, between the time that the server gets the request, and the time that te server sends out the response to the client.  
 - Example
+```
+var myLogger = function (req, res, next) {
+  console.log('LOGGED');
+  next();
+};
 
+```
 ## NPM, NVM and YARN
 - What are those?
 
