@@ -6,30 +6,58 @@ The Domain Name System (DNS) is the phonebook of the Internet. Humans access inf
 
 - How does DNS work?
     - The process of DNS resolution involves converting a hostname (such as www.example.com) into a computer-friendly IP address (such as 192.168.1.1). An IP address is given to each device on the Internet, and that address is necessary to find the appropriate Internet device - like a street address is used to find a particular home. When a user wants to load a webpage, a translation must occur between what a user types into their web browser (example.com) and the machine-friendly address necessary to locate the example.com webpage.
-
-
 ## HTTP
-- What is it?
+### - What is it?
 
-- HTTP Methods
+> The Hypertext Transfer Protocol (HTTP) is the foundation of the World Wide Web
 
-- When should you use GET, POST, DELETE, PUT, etc… methods?
+- Is used to load web pages using hypertext links. HTTP is an application layer protocol designed to transfer information between networked devices and runs on top of other layers of the network protocol stack.
+- A typical flow over HTTP involves a client machine making a request to a server, which then sends a response message.
 
+### - HTTP Methods
+> Also refered as HTPP Verbs, wich are: GET, POST, DELETE, PUT, HEAD, OPTIONS and PATCH. These methods are basically a category of operation on resources.
+
+> The common features or group we can say, based on how these methods behaves while communicating are:
+
+- SAFE: we can say a method is safe if the request doesn't alter the state of the server.This type of method request shouldn't introduce any side effect or load on the server, also it shouldn't trigger ant external code.
+
+- IDEMPOTENT: are the methods that no matter how many times you call the same request, you will get the same result.
+
+- CACHEABLE: Response of the request that can be stored and used later.
+
+- ### When should you use GET, POST, DELETE, PUT, etc… methods?
+    - GET: When the client needs som kind of data or resource, he can request it with a GET method. This method is considered safe, idempotent and cacheable.
+    - POST: This method creates a new resource.
+    - DELETE: This request deletes the specified resource. 
+    - PUT: Used to update or replace a resource with the requested payload. Its a idempotent method becouse calling it once or several times has no side effects.
+    - HEAD: Similar to the GET method but this one only returns the header and not the body. Like the GET method this one is safe, idempotent and cacheable method
+    - OPTIONS:
+    - PATCH: 
 - When should you return an HTTP code 200, 201, 300, etc..?
-        
+
 ## CORS
-- What is it?
+- ### What is it?
+>CORS (cross-origin resource sharing)
 
+ - A request for a resource (like an image or a font) outside of the origin is known as a cross-origin request.
+    - Unlike same-origin, navigating to "https://www.ejemplo.com/hola.html" from URL1 could be allowed with CORS. Allowing cross-origin requests is helpful, as many websites today load resources from different places on the Internet (stylesheets, scripts, images, and more).
 ## RESTful
-- What is it?
-
-- Example
-    
+- ### What is it?
+>Restful is a software architectural style for applications based on networks (like Internet).
+- ### Example
+    https://official-joke-api.appspot.com/jokes/programming/random
+    This is a public API implemented as RESTful web service. Your browser will show an awful JSON-formatted programming joke.
 ## Middlewares (On NodeJS)
 - What is it?
-
+A Middleware is a program, function or script that is going to run, between the time that the server gets the request, and the time that te server sends out the response to the client.  
 - Example
+```
+var myLogger = function (req, res, next) {
+  console.log('LOGGED');
+  next();
+};
 
+```
 ## NPM, NVM and YARN
 - What are those?
 
