@@ -35,8 +35,10 @@ A request for a resource (like an image or a font) outside of the origin is know
 
 Allowing cross-origin requests is helpful, as many websites today load resources from different places on the Internet (stylesheets, scripts, images, and more).
 
-## RESTful
 
+ - A request for a resource (like an image or a font) outside of the origin is known as a cross-origin request.
+    - Unlike same-origin, navigating to "https://www.ejemplo.com/hola.html" from URL1 could be allowed with CORS. Allowing cross-origin requests is helpful, as many websites today load resources from different places on the Internet (stylesheets, scripts, images, and more).
+## RESTful
 A RESTful API is an architectural style for an application program interface (API) that uses HTTP requests to access and use data. That data can be used to GET, PUT, POST and DELETE data types, which refers to the reading, updating, creating and deleting of operations concerning resources.
 
 REST technology is generally preferred over other similar technologies. This tends to be the case because REST uses less bandwidth, making it more suitable for efficient internet usage. RESTful APIs can also be built with programming languages such as JavaScript or Python.
@@ -53,6 +55,7 @@ A perfect example is when you need to allow a user to have access to a determina
 
 ![image](images/imagen3.png)
 
+```
 ## NPM, NVM and YARN
 
 NPM → is the package manager for the node JavaScript platform. It puts modules in place so node can find them.
