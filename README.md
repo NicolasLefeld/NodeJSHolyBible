@@ -55,7 +55,6 @@ A perfect example is when you need to allow a user to have access to a determina
 
 ![image](images/imagen3.png)
 
-```
 ## NPM, NVM and YARN
 
 NPM → is the package manager for the node JavaScript platform. It puts modules in place so node can find them.
