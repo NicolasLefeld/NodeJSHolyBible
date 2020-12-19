@@ -204,59 +204,123 @@ Basically, there are three places you can use spread:
 ![image](images/imagen17.png)
 
 # Version control system
-- What is it?
+
+The code which is stored in Git keeps changing as more code is added. Also, many developers can add code in parallel. So Version Control System helps in handling this by maintaining a history of what changes have happened. Also, Git provides features like branches and merges, which I will be covering later.
 
 ## GIT
-- What is it?
 
-- Basic comands
+- git --version
+- git init
+- git add
+- git push
+- git log
+- git pull
+- git status
+git commit -m ""
+
 
 ## GitHub
-- What is it?
 
-- Basic comands
+We’ve established that Git is a version control system, similar but better than the many alternatives available. So, what makes GitHub so special? Git is a command-line tool, but the center around which all things involving Git revolve is the hub—GitHub.com—where developers store their projects and network with like minded people.
 
 ## GitFlow
-- What is it?
+
+It's a branching model for GIT. it is very suitable for development teams
+
+<ins>Key Benefits</ins>
+
+Parallel Development
+One of the great things about GitFlow is that it makes parallel development very easy, by isolating new development from finished work. New development (such as features and non-emergency bug fixes) is done in feature branches, and is only merged back into main body of code when the developer(s) is happy that the code is ready for release.
+
+
+<ins>Collaboration</ins>
+
+Feature branches also make it easier for two or more developers to collaborate on the same feature, because each feature branch is a sandbox where the only changes are the changes necessary to get the new feature working. That makes it very easy to see and follow what each collaborator is doing.
+
+<ins>Release Staging Area</ins>
+
+As new development is completed, it gets merged back into the develop branch, which is a staging area for all completed features that haven’t yet been released. So when the next release is branched off of develop, it will automatically contain all of the new stuff that has been finished.
+
+<ins>Support For Emergency Fixes</ins>
+
+GitFlow supports hotfix branches - branches made from a tagged release. You can use these to make an emergency change, safe in the knowledge that the hotfix will only contain your emergency fix. There’s no risk that you’ll accidentally merge in new development at the same time.
   
 # POO Basics
 
 ## Garbage collector
-- What is it?
->
+
+In the low-level languages like C, developers need to manually allocate and deallocate the memory using the malloc(), calloc(), realloc(), and free() methods. In the high-level languages like Java and JavaScript, we don't need to explicitly allocate or release memory. JavaScript values are allocated when things are created (objects, Strings, etc.) and freed automatically when they are no longer used. This process is called Garbage collection.
+
 
 ## Constructor/destructor
-- What is it?
->
+
+![image](images/imagen18.png)
 
 ## Encapsulation
-- What is it?
->
+
+Encapsulation is the bundling of data and the methods that act on that data such that access to that data is restricted from outside the bundle, or as Alan Kay describes it, “local retention and protection and hiding of state-process.” In OOP, that means that an object stores its state privately, and only the object’s methods have access to change it.
 
 ## Abstraction
-- What is it?
->
+
+An abstraction is a way of hiding the implementation details and showing only the functionality to the users. In other words, it ignores the irrelevant details and shows only the required one.
+
+<ins>Points to remember</ins>
+
+- We cannot create an instance of Abstract Class.
+- It reduces the duplication of code
 
 # Markdown
-- What is it?
 
-- How to use it?
+Markdown is a plain text formatting syntax aimed at making writing for the internet easier. The philosophy behind Markdown is that plain text documents should be readable without tags mussing everything up, but there should still be ways to add text modifiers like lists, bold, italics, etc. It is an alternative to WYSIWYG (what you see is what you get) editors, which use rich text that later gets converted to proper HTML.
+
+How to use it -> https://guides.github.com/features/mastering-markdown/
 
 # Agile methodologies
 
 ## KANBAN
-- What is it?
-> 
+
+In general, Kanban is a scheduling system for lean and other JIT processes. In a Kanban process, there are physical (or virtual) “cards” called Kanban that move through the process from start to finish. The aim is to keep a constant flow of Kanban so that as inventory is required at the end of the process, just that much is created at the start.
+
+![image](images/imagen19.png)
+
+Kanban is an agile methodology that is not necessarily iterative. Processes like Scrum have short iterations which mimic a project lifecycle on a small scale, having a distinct beginning and end for each iteration. Kanban allows the software be developed in one large development cycle. Despite this, Kanban is an example of an agile methodology because it fulfils all twelve of the principles behind the Agile manifesto, because whilst it is not iterative, it is incremental.
 
 ## SCRUM
-- What is it?
->
+
+Scrum is an agile development methodology used in the development of Software based on an iterative and incremental processes.  Scrum is adaptable, fast, flexible and effective agile framework that is designed to deliver value to the customer throughout the development of the project. The primary objective of Scrum is to satisfy the customer’s need through an environment of transparency in communication, collective responsibility and continuous progress.
+
+<ins>Benefits of SCRUM</ins>
+
+- Easily scalable
+- Flexible to changes
+- Higher software quality
+
+## Events in SCRUM
+
+- Sprint: Sprint is the basic unit of work for a Scrum team. This is the main feature that marks the difference between Scrum and other models for agile development.
+
+- Sprint Planning: The goal of the Sprint Planning is to define what is going to be done in the Sprint and how it is going to be done. This meeting is held at the beginning of each Sprint and is defined how it will approach the project coming from the Product Backlog stages and deadlines. Each Sprint is composed of different features.
+
+- Daily Scrum: The objective of the Daily Scrum is to evaluate the progress and trend until the end of the Sprint, synchronizing the activities and creating a plan for the next 24 hours.
+
+- Sprint Review: The goal of the sprint review is to show what work has been completed with regards to the product backlog for future deliveries. The finished sprint is reviewed, and there should already be a clear and tangible advancement in the product to present to the client.
+
+- Sprint Retrospective: The team reviews the completed goals of the finished sprint, write down the good and the bad, so as not to repeat the mistakes again.
+
+![image](images/imagen20.png)
+
 
 # Best practices
 
 ## Design patterns
-- What is it?
->
+
+A design pattern is a term used in software engineering for a general, reusable solution to a commonly occurring problem in software design.
+
+There are many design patterns that we can use to solve our most common problems, but that doesn't means that they are finished solutions, they just give us the tools to fix the problem.
+
+Patterns with examples here:
+
+https://medium.com/better-programming/javascript-design-patterns-25f0faaaa15
 
 ## Testing
 - What is it?
@@ -275,48 +339,103 @@ Basically, there are three places you can use spread:
 > 
 
 ## S.O.L.I.D
-- What is it?
->
+
+SOLID stands for:
+
+S - Single-responsiblity Principle
+
+O - Open-closed Principle
+
+L - Liskov Substitution Principle
+
+I - Interface Segregation Principle
+
+D - Dependency Inversion Principle
+
+
+<ins>Single responsibility Principle</ins>
+
+A class should have one and only one reason to change, meaning that a class should have only one job.
+
+<ins>Open-closed Principle </ins>
+
+Objects or entities should be open for extension but closed for modification.
+
+<ins>Liskov substitution Principle</ins>
+
+Let q(x) be a property provable about objects of x of type T. Then q(y) should be provable for objects y of type S where S is a subtype of T.
+
+This means that every subclass or derived class should be substitutable for their base or parent class.
+
+<ins>Interface segregation Principle</ins>
+
+A client should never be forced to implement an interface that it doesn’t use, or clients shouldn’t be forced to depend on methods they do not use.
+
+<ins>Dependency Inversion Principle</ins>
+
+Entities must depend on abstractions, not on concretions. It states that the high-level module must not depend on the low-level module, but they should depend on abstractions.
+
+Detailed info -> https://www.digitalocean.com/community/conceptual_articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design
+
+#
 
 ## D.R.Y
-- What is it?
->
+
+**Don't repeat yourself**
+
+t usually means refactoring code by taking something done several times and turning it into a loop or a function. DRY code is easy to change, because you only have to make any change in one place.
+
+![image](images/imagen21.png)
 
 ## K.I.S.S
-- What is it?
->
+
+**Keep it simple, Stupid**
+
+It's all about using the simplest code you can.
+
+![image](images/imagen22.png)
+
+More examples -> https://medium.com/infancyit/kiss-keep-it-simple-smart-javascript-habits-b019ce14b5ec
 
 ## Codeparing
 - What is it?
 >
 
 ## Linter 
-- What is it?
->
+
+is a tool that analyzes source code to flag programming errors, bugs, stylistic errors, and suspicious constructs.
+
+Linters have evolved. They started with those simple checks, but nowadays, they are getting more and more sophisticated. They perform Static Analysis, enforce configuration flags, check for compliance with a given style-guide or security rule, and a lot more.
+
+How to set ESLint -> https://sourcelevel.io/blog/how-to-setup-eslint-and-prettier-on-node
+
 - Examples
     - ESLint
 
 ## Documentation 
 
 ### JSDoc 
-- What is it?
->
-- Examples
-> 
+
+SDoc is a documentation generator that is used for the Javascript language, we can compare it with Javadoc (JAVA) or PHPDocumentor (PHP) among others, JSDoc what it does is analyze all the Javascript code and AUTOMATICALLY 🤯 generates a static page (HTML) with All the documentation. JSDoc is easy to integrate with any IDE or Code Editor.
+
+![image](images/imagen23.png)
 
 ### PlantUML
-- What is it?
->
-- Basic commands
-> 
-- Examples
-> 
+
+PlantUML is an open-source tool allowing users to create UML diagrams from a plain text language. 
+
+<ins>Commands:</ins>
+
+- Header
+- Footer
+- Scale
+- Title
+- Caption
+
 
 ### Swagger
-- What is it?
->
-- Examples
-> 
+
+Swagger allows you to describe the structure of your APIs so that machines can read them. The ability of APIs to describe their own structure is the root of all awesomeness in Swagger. Why is it so great? Well, by reading your API’s structure, we can automatically build beautiful and interactive API documentation. We can also automatically generate client libraries for your API in many languages and explore other possibilities like automated testing. Swagger does this by asking your API to return a YAML or JSON that contains a detailed description of your entire API. 
 
 # Useful technologies
 ## Contentful
