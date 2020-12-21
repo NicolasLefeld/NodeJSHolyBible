@@ -440,51 +440,104 @@ Swagger allows you to describe the structure of your APIs so that machines can r
 # Useful technologies
 ## Contentful
 
+The Content Delivery API (CDA), available at cdn.contentful.com, is a read-only API for delivering content from Contentful to apps, websites and other media. Content is delivered as JSON data, and images, videos and other media as files.
+
 ## Express
+
+Express 3.x is a light-weight web application framework to help organize your web application into an MVC architecture on the server side.
+
+You can then use a database like MongoDB with Mongoose (for modeling) to provide a backend for your Node.js application. Express.js basically helps you manage everything, from routes, to handling requests and views.
+
+try to write a small REST API server in plain Node.js (that is, using only core modules) and then in Express.js. The latter will take you 5-10x less time and lines of code.
 
 ## Koa
 
+Koa is a new web framework designed by the team behind Express, which aims to be a smaller, more expressive, and more robust foundation for web applications and APIs. By leveraging async functions, Koa allows you to ditch callbacks and greatly increase error-handling. Koa does not bundle any middleware within its core, and it provides an elegant suite of methods that make writing servers fast and enjoyable.
+
 ## React
 
+Is a javascript library to build user interfaces
+
+Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
+
+![image](images/imagen24.png)
+
 ## Redux
+
+Redux is a predictable state container for JavaScript apps.
+
+It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.
+
+You can use Redux together with React, or with any other view library. It is tiny (2kB, including dependencies), but has a large ecosystem of addons available.
    
 ## Vue.js
 
+Vue is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. 
+
 ## Serverless
 
-### AWS Lambda
-- What is it?
->
-- Implementation
+It’s a movement driven by developers and businesses who realize that software is eating the world, but you will be eaten too if you build & maintain all of it yourself. It’s a movement that demands that the most menial parts of building an application be abstracted away so that developers are free to actually spend their time delivering business value.
 
-> Note: Check of anothers
+### AWS Lambda
+
+AWS Lambda is a compute service that lets you run code without provisioning or managing servers. Lambda runs your code only when needed and scales automatically, from a few requests per day to thousands per second. You pay only for the compute time that you consume—there is no charge when your code is not running. With Lambda, you can run code for virtually any type of application or backend service, all with zero administration.
+
+**Example:**
+
+The best example is Netflix with its 70 billion hours of content in a quarter to nearly 60 million customer uses AWS Lambda examples of media transform to facilitate their media files in more than 50 formats.
+
+https://www.simform.com/serverless-aws-lambda-examples/#:~:text=Another%20example%2C%20you%20can%20use,trigger%20which%20will%20notify%20SNS.
 
 # Databases
 ## Relational DB
-- What is it?
->
-- Examples
-    - SQL
+
+SQL is short for Structured Query Language, basically meaning a very firm way of sorting through data in the form of tables, columns, and rows. How is data structured in an SQL database? The table itself would be made up really of one variable or object that we would be looking through. The column would represent the data point itself that needs to be stored and the row is a record of the data points per column.
+
+For example, if you are looking to sort data regarding what the weather is at a certain time of the day during a certain day, it would be structured as the following:
+
+Table: Weather
+Columns: Days of the Week
+Rows: Time of Day
+Data Points: Degrees Fahrenheit
+
+
 
 ## Non relational DB
-- What is it?
->
-- Basic commands
-> 
-- Examples
-    - MongoDB:
+
+In contrast to a relational database, a NoSQL database is one that is less structured/confined in format, and thus, allows for more flexibility and adaptability. If you are going to be dealing with a dataset that isn’t clearly defined, meaning not organized or structured, you likely won’t have the luxury of establishing defined tables and relationships amongst the dataset.
+
+### Pros
+
+- The database is highly flexible
+- It can be distributed amongst multiple databases
+- It is really fast and great for scalability
+- Is easy to set up and implement
+
+### Cons
+
+- The database takes up a ton of memory
+- It has a document size limit of 16 MB
+- It has limitations of nesting to 100 levels
+- There is a limit of 20,000 to your max connection number
 
 ## C.R.U.D operations
-- What is it?
-> 
+
+Within computer programming, the acronym CRUD stands for create, read, update and delete. These are the four basic functions of persistent storage. Also, each letter in the acronym can refer to all functions executed in relational database applications and mapped to a standard HTTP method, SQL statement or DDS operation.
 
 ## CouchDB
-- What is it?
-> 
+
+CouchDB uses multiple formats and protocols to store, transfer, and process its data, it uses JSON to store data, JavaScript as its query language using MapReduce, and HTTP for an API. 
 
 ## Redis
-- What is it?
-> 
+
+Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.
+It supports various data structures such as Strings, Hashes, Lists, Sets etc.
+
+### <ins> Why should we use it? </ins>
+
+- It's a non-SQL Database
+- It's super fast
+- Currently, it is being used by tech-giants like GitHub, Weibo, Pinterest, Snapchat, Craigslist, Digg, StackOverflow, Flickr.
 
 # Node JS / JS Theory
           
