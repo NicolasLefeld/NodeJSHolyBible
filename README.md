@@ -761,3 +761,597 @@ https://undraw.co/ (SVG Ilustration)
 https://pages.github.com/
 https://www.markdownguide.org/cheat-sheet/
 ```
+=======
+# Basic knowledge
+
+## DNS
+
+Domain name system, is like the phonebook of the internet, they are responsible of finding the IP’s of every web site.
+
+In a typical DNS query without any caching, there are four servers that work together to deliver an IP address to the client: recursive resolvers, root nameservers, TLD nameservers, and authoritative nameservers.
+
+First the resolver queries the root nameserver. The root server is the first step in translating (resolving) human-readable domain names into IP addresses. The root server then responds to the resolver with the address of a Top Level Domain (TLD) DNS server (such as .com or .net) that  stores the information for its domains.
+
+Next the resolver queries the TLD server. The TLD server responds with the IP address of the domain’s authoritative nameserver. The recursor then queries the authoritative nameserver, which will respond with the IP address of the origin server.
+
+The resolver will finally pass the origin server IP address back to the client. Using this IP address, the client can then initiate a query directly to the origin server, and the origin server will respond by sending website data that can be interpreted and displayed by the web browser.
+
+![image](images/imagen1.png)
+
+## HTTP
+
+Hyper text transfer protocol, basically it’s a protocol to connect between clients and servers, where the client sends a request, and the server returns a response to that request.
+
+Methods for HTTP are: POST – GET – PUT – PATCH – DELETE
+POST → Is a rquest to the web server to accept the data enclosed in the body of the request. Used more likely to store some new data.
+
+GET → Is used to read data from the URL.
+
+PUT → used to update or create new data, where the resource ID is chosen by the client and not the server.
+
+DELETE → Used to delete a resource.
+
+![image](images/imagen2.png)
+        
+## CORS
+
+A request for a resource (like an image or a font) outside of the origin is known as a cross-origin request. CORS (cross-origin resource sharing) manages cross-origin requests.
+
+Allowing cross-origin requests is helpful, as many websites today load resources from different places on the Internet (stylesheets, scripts, images, and more).
+
+
+ - A request for a resource (like an image or a font) outside of the origin is known as a cross-origin request.
+    - Unlike same-origin, navigating to "https://www.ejemplo.com/hola.html" from URL1 could be allowed with CORS. Allowing cross-origin requests is helpful, as many websites today load resources from different places on the Internet (stylesheets, scripts, images, and more).
+## RESTful
+A RESTful API is an architectural style for an application program interface (API) that uses HTTP requests to access and use data. That data can be used to GET, PUT, POST and DELETE data types, which refers to the reading, updating, creating and deleting of operations concerning resources.
+
+REST technology is generally preferred over other similar technologies. This tends to be the case because REST uses less bandwidth, making it more suitable for efficient internet usage. RESTful APIs can also be built with programming languages such as JavaScript or Python.
+
+Example → https://official-joke-api.appspot.com/jokes/programming/random
+
+This API REST will return you in JSON format, a random joke.
+    
+## Middlewares (On NodeJS)
+
+It’s the code that runs between the request from the client, until it reaches the server.
+
+A perfect example is when you need to allow a user to have access to a determinate URL, and if he’s not logged in, it will return you to a different URL than the requested one.
+
+![image](images/imagen3.png)
+
+## NPM, NVM and YARN
+
+NPM → is the package manager for the node JavaScript platform. It puts modules in place so node can find them.
+
+NVM → Is a tool that allows you to install nodejs and have different version of it.
+
+YARN → is a package manager for your code. It allows you to share your code to another developers around the world.
+
+## JSON
+
+JavaScript Object Notation → When exchanging data with the server, the data can only be text, and JSON is text, and we can convert every JavaScript object into JSON and send it to the server.
+
+Sending Data →
+
+![image](images/imagen4.png)
+
+Recieving data → 
+
+![image](images/imagen5.png)
+
+JSON is a lightweight data-interchange format
+JSON is "self-describing" and easy to understand
+JSON is language independent *
+
+## JWT
+
+defines a compact and self-contained way for securely transmitting information between parties as a JSON object. 
+
+When should we use them?
+
+    • Authorization: This is the most common scenario for using JWT. Once the user is logged in, each subsequent request will include the JWT, allowing the user to access routes, services, and resources that are permitted with that token. Single Sign On is a feature that widely uses JWT nowadays, because of its small overhead and its ability to be easily used across different domains.
+      
+    • Information Exchange: JSON Web Tokens are a good way of securely transmitting information between parties. Because JWTs can be signed for example, using public/private key pairs you can be sure the senders are who they say they are. Additionally, as the signature is calculated using the header and the payload, you can also verify that the content hasn't been tampered with.
+
+
+JWT Structure
+
+    • Header
+
+    • Payload
+
+    • Signature
+
+Header:
+
+![image](images/imagen6.png)
+
+Payload:
+
+![image](images/imagen7.png)
+
+Signature:
+
+![image](images/imagen8.png)
+
+The full JWT should look like:
+
+![image](images/imagen9.png)
+
+## Deploy a project
+- How to?
+
+- Examples of hosting
+
+## Microservices
+
+Instead of containing everything in a single unit, the microservices-based application is broken down into smaller, lightweight pieces based on a logical construct. The application consists of independent small (micro-) services, and when we deploy or scale the app, individual services get distributed within a set of machines which we call “a cluster” in the service fabric world.
+
+![image](images/imagen10.png)
+
+**ADVANTAGES**
+
+* Allows us to build, operate and manage services independently, and we can easily scale them out based on the resources they need.
+
+* Microservices take a lot of infrastructure risk out of the project straight away. With the infrastructure made almost invisible, microservice teams can iterate quickly.
+
+**DRAWBACKS**
+
+* Microservices are not automatically the right solution for every project. When you are running multiple instances of the same service or worker, you don’t necessarily need microservices. A well-built monolithic system can scale just as well for some classes of problems.
+
+* One of the big problems with microservices is “orchestration”, which means how to integrate the services with a guide to drive the process, much like a conductor in an orchestra. Integrating microservices can be quite complex.
+
+## Regular expressions
+
+A regular expression is a sequence of characters that forms a search pattern.
+
+When you search for data in a text, you can use this search pattern to describe what you are searching for.
+
+A regular expression can be a single character, or a more complicated pattern.
+
+Regular expressions can be used to perform all types of text search and text replace operations.
+
+![image](images/imagen11.png)
+
+## Minification
+
+Minification is the process of removing unnecessary elements and rewriting code to reduce file size. It is commonly done to web page resources, such as HTML, CSS, and JavaScript files. Reducing the size of web resources allows the files to be transferred more quickly, making web pages load faster.
+
+<ins>Ways to minifiy code:</ins>
+
+https://javascript-minifier.com/
+
+## Ternary operator
+
+The condition is what you’re actually testing. The result of your condition should be true or false or at least coerce to either boolean value.
+
+* A ? separates our conditional from our true value.
+
+* Anything between the ? and the : is what is executed if the condition evaluates to true.
+
+* Finally a : colon. If your condition evaluates to false, any code after the colon is executed.
+
+variablename = (condition) ? value1:value2
+
+<ins>**EXAMPLE**</ins>
+
+![image](images/imagen12.png)
+
+## Recursion
+
+It’s the process in which a function repeatedly calls itself until a condition is met that makes it stop. It is similar to iteration with the main difference being that in recursion the function calls itself to execute instructions, but in iteration there is a loop that repeatedly executes a set of instructions.
+
+<ins>**EXAMPLE**</ins>
+
+![image](images/imagen13.png)
+
+## Logical operators
+
+![image](images/imagen14.png)
+
+## Spread operator (...)
+
+Basically, there are three places you can use spread: 
+
+1. In function calls
+2. In array literals
+3. In object literals
+
+<ins>In functions:</ins>
+
+![image](images/imagen15.png)
+
+<ins>In arrays:</ins>
+
+![image](images/imagen16.png)
+
+<ins>In objects:</ins>
+
+![image](images/imagen17.png)
+
+# Version control system
+- What is it?
+
+## GIT
+- What is it?
+
+- Basic comands
+
+## GitHub
+- What is it?
+
+- Basic comands
+
+## GitFlow
+- What is it?
+  
+# POO Basics
+
+## Garbage collector
+- What is it?
+>
+
+## Constructor/destructor
+- What is it?
+>
+
+## Encapsulation
+- What is it?
+>
+
+## Abstraction
+- What is it?
+>
+
+# Markdown
+- What is it?
+
+- How to use it?
+
+# Agile methodologies
+
+## KANBAN
+- What is it?
+> 
+
+## SCRUM
+- What is it?
+>
+
+# Best practices
+
+## Design patterns
+- What is it?
+>
+
+## Testing
+- What is it?
+>
+- Basic commands
+> 
+- Examples
+> 
+
+### Jest
+- What is it?
+>
+- Basic commands
+> 
+- Examples
+> 
+
+## S.O.L.I.D
+- What is it?
+>
+
+## D.R.Y
+- What is it?
+>
+
+## K.I.S.S
+- What is it?
+>
+
+## Codeparing
+- What is it?
+>
+
+## Linter 
+- What is it?
+>
+- Examples
+    - ESLint
+
+## Documentation 
+
+### JSDoc 
+- What is it?
+>
+- Examples
+> 
+
+### PlantUML
+- What is it?
+>
+- Basic commands
+> 
+- Examples
+> 
+
+### Swagger
+- What is it?
+>
+- Examples
+> 
+
+# Useful technologies
+## Contentful
+
+## Express
+
+## Koa
+
+## React
+
+## Redux
+   
+## Vue.js
+
+## Serverless
+
+### AWS Lambda
+- What is it?
+>
+- Implementation
+
+> Note: Check of anothers
+
+# Databases
+## Relational DB
+- What is it?
+>
+- Examples
+    - SQL
+
+## Non relational DB
+- What is it?
+>
+- Basic commands
+> 
+- Examples
+    - MongoDB:
+
+## C.R.U.D operations
+- What is it?
+> 
+
+## CouchDB
+- What is it?
+> 
+
+## Redis
+- What is it?
+> 
+
+# Node JS / JS Theory
+          
+## V8 engine
+- What is it?
+>
+
+## Event loop
+- What is it?
+>
+
+- Examples
+>
+
+## Modules, require, import/export
+- What is it?
+>
+- Basic commands
+> 
+- Examples
+> 
+
+## Node eventemitter
+- What is it?
+>
+
+## Streams 
+- What is it?
+> 
+- Examples
+> 
+
+## Buffers
+- What is it?
+>
+- Examples
+> 
+
+## JS Data types
+
+##  Error handling
+- What is it?
+>
+- Examples
+> 
+
+## Callback hell
+- What is it?
+>
+- Examples
+>
+
+## Promises
+- What is it?
+>
+- Basic commands
+> 
+- Examples
+> 
+
+## Async await
+- What is it?
+>
+- Basic commands
+> 
+- Examples
+> 
+
+## HOF
+
+### Arrow function
+- What is it?
+>
+- Implementation
+> 
+- Examples
+> 
+
+### .map
+- What is it?
+>
+- Implementation
+> 
+- Examples
+> 
+
+### .reduce
+- What is it?
+>
+- Implementation
+> 
+- Examples
+> 
+
+### etc...
+
+# Object methods
+
+## this
+- What is it?
+>
+- Implementation
+> 
+- Examples
+> 
+
+## keys
+- What is it?
+>
+- Implementation
+> 
+- Examples
+> 
+
+## etc...
+
+# Array methods
+
+## .push
+- What is it?
+>
+- Implementation
+> 
+- Examples
+> 
+
+## .pop
+- What is it?
+>
+- Implementation
+> 
+- Examples
+> 
+
+## etc...
+
+# JSON Methods
+
+## stringify 
+- What is it?
+>
+- Implementation
+> 
+- Examples
+> 
+
+## parse
+- What is it?
+>
+- Implementation
+> 
+- Examples
+> 
+
+# SCOPE
+## var
+- What is it?
+>
+- Implementation
+> 
+- Examples
+> 
+
+## let
+- What is it?
+>
+- Implementation
+> 
+- Examples
+> 
+
+## const
+- What is it?
+>
+- Implementation
+> 
+- Examples
+> 
+
+# Ecmascript
+- What is it?
+>
+
+# Prototype
+- What is it?
+>
+- Implementation
+> 
+- Examples
+> 
+
+# Api
+- What is it?
+>
+- Implementation
+> 
+- Examples
+> 
+
+## ApiGateway
+- What is it?
+>
+- Implementation
+> 
+- Examples
+> 
+
+
+
+# Bibliography
+```
+https://javascript.info/
+https://eloquentjavascript.net/
+https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/README.md
+https://github.com/bevacqua/es6
+https://jgthms.com/javascript-in-14-minutes/
+https://learnxinyminutes.com/docs/javascript/
+https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9 
+
+https://undraw.co/ (SVG Ilustration)
+https://pages.github.com/
+https://www.markdownguide.org/cheat-sheet/
+```
