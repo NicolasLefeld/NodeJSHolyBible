@@ -542,33 +542,132 @@ It supports various data structures such as Strings, Hashes, Lists, Sets etc.
 # Node JS / JS Theory
           
 ## V8 engine
-- What is it?
->
+
+V8 is Google’s open source high-performance JavaScript and WebAssembly engine, written in C++. It is used in Chrome and in Node.js, among others. It implements ECMAScript and WebAssembly.
+
+V8 was first designed to increase the performance of JavaScript execution inside web browsers. In order to obtain speed, V8 translates JavaScript code into more efficient machine code instead of using an interpreter.
 
 ## Event loop
-- What is it?
->
 
-- Examples
->
+The event loop is what allows Node.js to perform non-blocking I/O operations — despite the fact that JavaScript is single-threaded — by offloading operations to the system kernel whenever possible.
+
+![image](images/imagen25.png)
 
 ## Modules, require, import/export
-- What is it?
->
-- Basic commands
-> 
-- Examples
-> 
+
+Node modules allow you to write reusable code. You can nest them one inside another. Using the Node Package Manager (NPM), you can publish your modules and make them available to the community. Also, NPM enables you to reuse modules created by other developers.
+
+### Require:
+
+require are used to consume modules. It allows you to include modules in your programs. You can add built-in core Node.js modules, community-based modules (node_modules), and local modules.
+
+Let’s say we want to read a file from the filesystem. Node has a core module called ‘fs’:
+
+![image](images/imagen26.png)
+
+As you can see, we imported the “fs” module into our code. It allows us to use any function attached to it, like “readFile” and many others.
+
+The require function will look for files in the following order:
+
+1. <ins>Built-in core Node.js modules (like fs)</ins>
+
+Some of the most used core modules are:
+
+- fs: Allows you to manipulate (create/read/write) files and directories.
+- path: utilities to work with files and directories paths.
+- http: create HTTP servers and clients for web development.
+- url: utilities for parsing URLs and extracting elements from it.
+
+
+2. <ins>NPM Modules</ins>. It will look in the node_modules folder.
+
+- lodash: a collection of utility functions for manipulating arrays, objects, and strings.
+- request: HTTP client simpler to use than the built-in http module.
+- express: HTTP server for building websites and API. Again, simpler to use than the built-in http module.
+
+This ones need to be installed first.
+
+3. <ins>Local Modules</ins>. If the module name has a ./, / or ../, it will look for the directory/file in the given path. It matches the file extensions: *.js, *.json, *.mjs, *.cjs, *.wasm and *.node.
+
+### Exports:
+
+The exports keyword gives you the chance to “export” your objects and methods.
+
+![image](images/imagen27.png)
+
+In the code below, we are exporting the area and circumference functions. We defined the PI constant, but this is only accessible within the module. Only the elements associated with exports are available outside the module.
+
+So, we can consume it using require in another file like follows:
+
+![image](images/imagen28.png)
+
+Noticed that this time we prefix the module name with ./. That indicates that the module is a local file.
+
+### Imports:
+
+![image](images/imagen29.png)
 
 ## Node eventemitter
-- What is it?
->
+
+Many objects in a Node emit events, for example, a net.Server emits an event each time a peer connects to it, an fs.readStream emits an event when the file is opened. All objects which emit events are the instances of events.EventEmitter.
+
+### EventEmitter Class
+As we have seen in the previous section, EventEmitter class lies in the events module. It is accessible via the following code:
+
+![image](images/imagen30.png)
+
+When an EventEmitter instance faces any error, it emits an 'error' event. When a new listener is added, 'newListener' event is fired and when a listener is removed, 'removeListener' event is fired.
+
+EventEmitter provides multiple properties like on and emit. on property is used to bind a function with the event and emit is used to fire an event.
+
+### Example:
+
+![image](images/imagen31.png)
+
+The output of that code should be:
+
+![image](images/imagen32.png)
 
 ## Streams 
-- What is it?
-> 
-- Examples
-> 
+
+Streams are collections of data, just like arrays or strings. The difference is that streams might not be available all at once, and they don’t have to fit in memory. 
+
+This makes streams really powerful when working with large amounts of data, or data that’s coming from an external source one chunk at a time.
+
+However, streams are not only about working with big data. They also give us the power of composability in our code. Just like we can compose powerful linux commands by piping other smaller Linux commands, we can do exactly the same in Node with streams.
+
+![image](images/imagen33.png)
+
+The list above has some examples for native Node.js objects that are also readable and writable streams. Some of these objects are both readable and writable streams, like TCP sockets, zlib and crypto streams.
+
+### Example of stream:
+
+![image](images/imagen34.png)
+
+The fs module can be used to read from and write to files using a stream interface. In the example above, we’re writing to that big.file through a writable stream 1 million lines with a loop.
+
+Running the script above generates a file that’s about ~400 MB.
+
+Here’s a simple Node web server designed to exclusively serve the big.file:
+
+
+![image](images/imagen35.png)
+
+When I ran the server, it started out with a normal amount of memory, 8.7 MB
+
+When i connected to the server, the memory usage jumped to 400mb
+
+We basically put the whole big.file content in memory before we wrote it out to the response object. This is very inefficient.
+
+The HTTP response object (res in the code above) is also a writable stream. This means if we have a readable stream that represents the content of big.file, we can just pipe those two on each other and achieve mostly the same result without consuming ~400 MB of memory.
+
+Node’s fs module can give us a readable stream for any file using the createReadStream method. We can pipe that to the response object:
+
+![image](images/imagen36.png)
+
+When a client asks for that big file, we stream it one chunk at a time, which means we don’t buffer it in memory at all. The memory usage grew by about 25 MB and that’s it.
+
+Now imagine the same thing but with huge files.
 
 ## Buffers
 - What is it?
