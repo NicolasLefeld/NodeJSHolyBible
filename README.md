@@ -670,78 +670,128 @@ When a client asks for that big file, we stream it one chunk at a time, which me
 Now imagine the same thing but with huge files.
 
 ## Buffers
-- What is it?
->
-- Examples
-> 
+
+It represents a fixed-size chunk of memory (can’t be resized) allocated outside of the V8 JavaScript engine.
+
+Buffers were introduced to help developers deal with binary data, in an ecosystem that traditionally only dealt with strings rather than binaries.
 
 ## JS Data types
 
 ##  Error handling
-- What is it?
->
-- Examples
-> 
+
+First of all, it is necessary to have a clear understanding of errors in Node.js. In general, Node.js errors are divided into two distinct categories: operational errors and programmer errors.
+
+- Operational errors represent runtime problems whose results are expected and should be dealt with in a proper way. Operational errors don’t mean the application itself has bugs, but developers need to handle them thoughtfully. Examples of operational errors include “out of memory,” “an invalid input for an API endpoint,” and so on.
+
+- Programmer errors represent unexpected bugs in poorly written code. They mean the code itself has some issues to solve and was coded wrong. A good example is to try to read a property of “undefined.” To fix the issue, the code has to be changed. That is a bug a developer made, not an operational error.
+
+### Example:
+
+Assuming you have some experience with async JavaScript and Node.js, you might have experienced drawbacks when using callbacks for dealing with errors. They force you to check errors all the way down to nested ones, causing notorious “callback hell” issues that make it hard to follow the code flow.
+
+Using promises or async/await is a good replacement for callbacks. The typical code flow of async/await looks like the following:
+
+![image](images/imagen37.png)
 
 ## Callback hell
-- What is it?
->
-- Examples
->
+
+This is a big issue caused by coding with complex nested callbacks. Here, each and every callback takes an argument that is a result of the previous callbacks. In this manner, The code structure looks like a pyramid, making it difficult to read and maintain. Also, if there is an error in one function, then all other functions get affected.
+
+### How to escape from it:
+
+- JavaScript provides an easy way of escaping from a callback hell. This is done by event queue and promises.
+
+- A promise is a returned object from any asynchronous function, to which callback methods can be added based on the previous function’s result.
+
+- Promises use .then() method to call async callbacks. We can chain as many callbacks as we want and the order is also strictly maintained.
+
+- Promises use .fetch() method to fetch an object from the network. It also uses .catch() method to catch any exception when any block fails.
+
+- So these promises are put in event queue so that they don’t block subsequent JS code. Also once the results are returned, the event queue finishes its operations.
+
+- There are also other helpful keywords and methods like async, wait, settimeout() to simplify and make better use of callbacks.
 
 ## Promises
-- What is it?
->
-- Basic commands
-> 
-- Examples
-> 
+
+A JavaScript Promise object can be:
+
+- Pending
+- Fulfilled
+- Rejected
+
+The Promise object supports two properties: state and result.
+
+While a Promise object is "pending" (working), the result is undefined.
+
+When a Promise object is "fulfilled", the result is a value.
+
+When a Promise object is "rejected", the result is an error object.
+
+![image](images/imagen38.png)
+
+### Example:
+
+![image](images/imagen39.png)
 
 ## Async await
-- What is it?
->
-- Basic commands
-> 
-- Examples
-> 
+
+Async functions are a combination of promises and generators, and basically, they are a higher level abstraction over promises. Let me repeat: async/await is built on promises.
+
+### Explanation:
+
+An async function returns a promise, like in this example:
+
+![image](images/imagen40.png)
+
+When you want to call this function you prepend await, and the calling code will stop until the promise is resolved or rejected. One caveat: the client function must be defined as async. Here's an example:
+
+![image](images/imagen41.png)
 
 ## HOF
 
 ### Arrow function
-- What is it?
->
-- Implementation
-> 
-- Examples
-> 
+
+![image](images/imagen42.png)
 
 ### .map
-- What is it?
->
-- Implementation
-> 
-- Examples
-> 
+
+The map() method creates a new array with the results of calling a function for every array element.
+
+The map() method calls the provided function once for each element in an array, in order.
+
+Note: map() does not execute the function for array elements without values.
+
+### Example:
+
+![image](images/imagen43.png)
 
 ### .reduce
-- What is it?
->
-- Implementation
-> 
-- Examples
-> 
 
-### etc...
+- The reduce() method reduces the array to a single value.
+
+- The reduce() method executes a provided function for each value of the array (from left-to-right).
+
+- The return value of the function is stored in an accumulator (result/total).
+
+- Note: reduce() does not execute the function for array elements without values.
+
+- Note: This method does not change the original array.
+
+### Example: 
+
+![image](images/imagen44.png)
 
 # Object methods
 
 ## this
-- What is it?
->
-- Implementation
-> 
-- Examples
-> 
+
+In a function definition, this refers to the "owner" of the function.
+
+In the example above, this is the person object that "owns" the fullName function.
+
+In other words, this.firstName means the firstName property of this object.
+
+![image](images/imagen45.png)
 
 ## keys
 - What is it?
@@ -756,95 +806,104 @@ Now imagine the same thing but with huge files.
 # Array methods
 
 ## .push
-- What is it?
->
-- Implementation
-> 
-- Examples
-> 
+
+The push() method adds new items to the end of an array, and returns the new length.
+
+- Note: The new item(s) will be added at the end of the array.
+
+- Note: This method changes the length of the array.
+
+- Tip: To add items at the beginning of an array, use the unshift() method.
 
 ## .pop
-- What is it?
->
-- Implementation
-> 
-- Examples
-> 
+
+- The pop() method removes the last element of an array, and returns that element.
+
+- Note: This method changes the length of an array.
+
+- Tip: To remove the first element of an array, use the shift() method.
+
+
 
 ## etc...
 
 # JSON Methods
 
 ## stringify 
-- What is it?
->
-- Implementation
-> 
-- Examples
-> 
+
+![image](images/imagen46.png)
 
 ## parse
-- What is it?
->
-- Implementation
-> 
-- Examples
-> 
+
+A common use of JSON is to exchange data to/from a web server.
+
+When receiving data from a web server, the data is always a string.
+
+Parse the data with JSON.parse(), and the data becomes a JavaScript object.
+
+![image](images/imagen47.png)
 
 # SCOPE
 ## var
-- What is it?
->
-- Implementation
-> 
-- Examples
-> 
+
+The var statement declares a variable.
+
+Variables are containers for storing information.
+
+Creating a variable in JavaScript is called "declaring" a variable:
+
+var carName;
+After the declaration, the variable is empty (it has no value).
+
+To assign a value to the variable, use the equal sign:
+
+carName = "Volvo";
+
+You can also assign a value to the variable when you declare it:
+
+var carName = "Volvo";
 
 ## let
-- What is it?
->
-- Implementation
-> 
-- Examples
-> 
+
+Main difference is scoping rules.
+
+Variables declared by var keyword are scoped to the immediate function body (hence the function scope) while let variables are scoped to the immediate enclosing block denoted by { } (hence the block scope).
+
+![image](images/imagen48.png)
 
 ## const
-- What is it?
->
-- Implementation
-> 
-- Examples
-> 
+
+Variables defined with const behave like let variables, except they cannot be reassigned:
+
+![image](images/imagen49.png)
 
 # Ecmascript
-- What is it?
->
+
+JavaScript is a subset of ECMAScript.
+
+JavaScript is basically ECMAScript at its core but builds upon it. Languages such as ActionScript, JavaScript, JScript all use ECMAScript as its core.
+
+As a comparison, AS/JS/JScript are 3 different cars, but they all use the same engine... each of their exteriors is different though, and there have been several modifications done to each to make it unique.
 
 # Prototype
-- What is it?
->
-- Implementation
-> 
-- Examples
-> 
 
-# Api
-- What is it?
->
-- Implementation
-> 
-- Examples
-> 
+All JavaScript objects inherit properties and methods from a prototype.
 
-## ApiGateway
-- What is it?
->
-- Implementation
-> 
-- Examples
-> 
+All JavaScript objects inherit properties and methods from a prototype:
+
+- Date objects inherit from Date.prototype
+
+- Array objects inherit from Array.prototype
+
+- Person objects inherit from Person.prototype
+
+The Object.prototype is on the top of the prototype inheritance chain:
+
+Date objects, Array objects, and Person objects inherit from Object.prototype.
 
 
+
+# END OF README FILE
 
 # Bibliography
 ```
